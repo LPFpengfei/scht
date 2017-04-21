@@ -3,7 +3,7 @@ development:
   database: scht_development
   encoding: utf8mb4
   username: root
-  password: hxklpf
+  password:
   host: 127.0.0.1
   pool: 16
   timeout: 5000
@@ -14,7 +14,7 @@ test:
   encoding: utf8mb4
   database: scht_test
   username: root
-  password: hxklpf
+  password:
   host: 127.0.0.1
   pool: 5
   timeout: 5000
@@ -25,7 +25,7 @@ production:
   database: scht
   encoding: utf8mb4
   username: root
-  password: hxklpf
+  password:
   host: 127.0.0.1
   pool: 5
   timeout: 5000
