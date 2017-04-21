@@ -1,0 +1,138 @@
+<div class="aside-inner">
+   <nav class="sidebar" data-sidebar-anyclick-close="">
+      <ul class="nav">
+         <li class="<%= 'active' if controller?('home')%>">
+            <a href="<%= root_path %>" title="首页">
+               <em class="icon-home"></em>
+               <span data-localize="sidebar.nav.DASHBOARD">首页</span>
+            </a>
+         </li>
+         <li class="<%= 'active' if controller?('admins') && action?('index')%>">
+            <a href="#admin" title="账户管理" data-toggle="collapse">
+               <em class="icon-notebook"></em>
+               <span>账户管理</span>
+            </a>
+            <ul id="admin" class="nav sidebar-subnav collapse">
+               <li class="<%= 'active' if controller?('admins') %>">
+                  <a href="<%= admins_path %>" title="账户列表">
+                     <span>账户列表</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+<!--          <li class="nav-heading">
+            <span>Components</span>
+         </li> -->
+         <li >
+            <a href="#products" title="商品管理" data-toggle="collapse">
+               <em class="icon-people"></em>
+               <span>商品管理</span>
+            </a>
+            <ul id="products" class="nav sidebar-subnav collapse">
+               <li >
+                  <a href="<%= products_path %>" title="商品列表">
+                     <span>商品列表</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="<%= product_categories_path %>" title="商品分类">
+                     <span>商品分类</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="<%= product_images_path %>" title="商品图片">
+                     <span>商品图片</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li >
+            <a href="#customer" title="客户管理" data-toggle="collapse">
+               <em class="icon-people"></em>
+               <span>客户管理</span>
+            </a>
+            <ul id="customer" class="nav sidebar-subnav collapse">
+               <li >
+                  <a href="<%= customers_path %>" title="用户列表">
+                     <span>用户列表</span>
+                  </a>
+               </li>
+               <li >
+                  <a href="<%= admins_path %>" title="客户批量导入">
+                     <span>客户地址列表</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li >
+            <a href="#orders" title="订单管理" data-toggle="collapse">
+               <em class="icon-list"></em>
+               <span>订单管理</span>
+            </a>
+            <ul id="orders" class="nav sidebar-subnav collapse">
+               <li >
+                  <a href="<%= admins_path %>" title="订单搜索">
+                     <span>订单搜索</span>
+                  </a>
+               </li>
+               <li >
+                  <a href="<%= admins_path %>" title="支付统计">
+                     <span>支付统计</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li >
+            <a href="#feed_back" title="反馈信息管理" data-toggle="collapse">
+               <em class="icon-bubble"></em>
+               <span>反馈信息管理</span>
+            </a>
+            <ul id="feed_back" class="nav sidebar-subnav collapse">
+               <li >
+                  <a href="<%= admins_path %>" title="投诉办理">
+                     <span>投诉办理</span>
+                  </a>
+               </li>
+               <li >
+                  <a href="<%= admins_path %>" title="反馈建议">
+                     <span>反馈建议</span>
+                  </a>
+               </li>
+               <li >
+                  <a href="<%= admins_path %>" title="评价管理">
+                     <span>评价管理</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li >
+            <a href="#settings" title="系统设置" data-toggle="collapse">
+               <em class="icon-settings"></em>
+               <span>系统设置</span>
+            </a>
+            <ul id="settings" class="nav sidebar-subnav collapse">
+               <li >
+                  <a href="<%= admins_path %>" title="等级规则设置">
+                     <span>等级规则设置</span>
+                  </a>
+               </li>
+               <li >
+                  <a href="<%= admins_path %>" title="积分规则设置">
+                     <span>积分规则设置</span>
+                  </a>
+               </li>
+               <li >
+                  <a href="<%= admins_path %>" title="api列表">
+                     <span>api列表</span>
+                  </a>
+               </li>
+
+            </ul>
+         </li>
+<!--          <li class="nav-heading">
+            <span>More</span>
+         </li>
+ -->
+      </ul>
+   </nav>
+</div>

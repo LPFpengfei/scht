@@ -1,0 +1,19 @@
+zh-CN:
+  activerecord:
+    errors:
+      models:
+        admin:
+          attributes:
+            password:
+              blank: 不能为空
+              too_short: 长度至少为6位
+            password_confirmation:
+              blank: 不能为空
+              too_short: 长度至少为6位
+              confirmation: 确认密码和密码不一致
+            email:
+              blank: 不能为空
+              invalid: 格式不对
+              taken: 已经存在
+            role:
+              blank: 请选择

@@ -1,0 +1,52 @@
+<div class="content-heading">
+   <div class="pull-right">
+      <div class="btn-group">
+        <button type="button" class="btn"><%= link_to "返回",products_path %></button>
+      </div>
+   </div>
+  商品添加
+</div>
+<div class="row">
+  <%= form_for @products do |f| %>
+  <p>
+    <%= f.label :商品名称： %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :商品原价： %>
+    <%= f.text_field :originprice %>
+  </p>
+
+  <p>
+    <%= f.label :商品现价： %>
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :商品详情： %>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :库存： %>
+    <%= f.text_field :quantity %>
+  </p>
+
+  <p>
+    <%= f.label :商品分类： %>
+<!--     <f.select :> -->
+    <select name="product[product_category_id]">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+  </p>
+  <p>
+    <button type="submit" class="btn btn-primary">添加完成</button>
+  </p>
+  <% end %>
+</div>

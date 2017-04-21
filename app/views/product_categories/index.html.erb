@@ -1,0 +1,27 @@
+<div class="content-heading">
+   <div class="pull-right">
+      <div class="btn-group">
+         <button type="button" class="btn"><%= link_to '新增商品分类', new_product_category_path %></button>
+      </div>
+   </div>
+   商品列表
+</div>
+<!-- START widgets box-->
+<div class="row">
+   <table class="table table-bordered">
+      <tr>
+         <th>id</th>
+         <th>商品分类名称</th>
+         <th>备注</th>
+         <th>操作</th>
+      </tr>
+   <% @productCategory.each do |productcategory| %>   
+      <tr>
+         <td><%= productcategory.id %></td>
+         <td><%= productcategory.name %></td>
+         <td><%= productcategory.comment %></td>
+         <td><%= link_to '删除', product_category_path(productcategory), method: :delete  %></td>
+      </tr>
+   <% end %>
+   </table>
+</div>

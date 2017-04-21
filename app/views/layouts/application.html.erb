@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="wb:webmaster" content="40f26e2fd8bb84c8" />
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>商城后台</title>
+  <%= stylesheet_link_tag 'reset' %>
+  <%= stylesheet_link_tag 'base' %>
+  <%= stylesheet_link_tag 'application'%>
+  <%= javascript_include_tag 'application'%>
+  <%= javascript_include_tag 'base' %>
+  <%= yield :styles %>
+  <%= yield :scripts %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器。 请 <a
+  href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+   <div class="wrapper">
+      <header class="topnavbar-wrapper">
+         <%= render partial: "layouts/partials/topnavbar" %>
+      </header>
+      <aside class="aside">
+         <%= render partial: "layouts/partials/sidebar" %>
+      </aside>
+      <section style="background: #fff">
+         <div class="content-wrapper">
+           <% if flash[:alert].present? %>
+             <div class="custom-alerts alert alert-danger fade in">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+               <%= flash[:alert] %>
+             </div>
+           <% end %>
+
+           <% if flash[:notice].present? %>
+             <div class="custom-alerts alert alert-success fade in">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+               <%= flash[:notice] %>
+             </div>
+           <% end %>
+           <%= yield %>
+         </div>
+      </section>
+      <footer>
+         <%= render partial: "layouts/partials/footer" %>
+      </footer>
+   </div>
+
+   <%= yield :body_area %>
+
+</body>
+</html>

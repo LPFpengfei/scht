@@ -1,0 +1,41 @@
+<div class="block-center mt-xl wd-xl">
+   <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+        <p class="text-center pv">商城管理后台</p>
+         <% if flash[:alert].present? %>
+           <div class="custom-alerts alert alert-danger fade in">
+             <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+             <%= flash[:alert] %>
+           </div>
+         <% end %>
+
+         <% if flash[:notice].present? %>
+           <div class="custom-alerts alert alert-success fade in">
+             <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+             <%= flash[:notice] %>
+           </div>
+         <% end %>
+      </div>
+      <div class="panel-body">
+        <%= custom_form_for(resource, as: resource_name, url: session_path(resource_name), class: 'mb-lg') do |f| %>
+          <div class="form-group has-feedback">
+            <%= f.input :email, required: false, autofocus: true, wrapper: false, input_html: {class: 'form-control', placeholder: '邮箱', autocomplete: 'off'} %>
+            <span class="fa fa-envelope form-control-feedback text-muted"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <%= f.input :password, required: false, input_html: {class: 'form-control', placeholder: '密码'} %>
+            <span class="fa fa-lock form-control-feedback text-muted"></span>
+          </div>
+          <div class="clearfix">
+<!--             <div class="checkbox c-checkbox pull-left mt0">
+              <label>
+                <input type="checkbox" value="<%= devise_mapping.rememberable? %>" <%= 'checked' if devise_mapping.rememberable? %> name="admin[remember_me]" />
+                <span class="fa fa-check"></span>记住我？</label>
+            </div> -->
+            </div>
+          </div>
+          <button type="submit" class="btn btn-block btn-primary mt-lg">登录</button>
+        <% end %>
+      </div>
+   </div>
+</div>

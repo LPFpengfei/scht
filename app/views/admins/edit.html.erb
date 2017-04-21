@@ -1,0 +1,53 @@
+<div class="page-wrapper-row full-height">
+  <div class="page-wrapper-middle">
+    <div class="page-container">
+      <div class="page-content-wrapper">
+        <div class="page-head">
+          <div class="container">
+            <div class="page-title">
+              <h1>账号管理</h1>
+            </div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="container">
+            <ul class="page-breadcrumb breadcrumb">
+              <li>
+                  <a href="<%= root_path %>">首页</a>
+                  <i class="fa fa-circle"></i>
+              </li>
+              <li>
+                  <a href="javascript:;">账号管理</a>
+                  <i class="fa fa-circle"></i>
+              </li>
+              <li>
+                  <span>修改账号信息</span>
+              </li>
+            </ul>
+            <div class="page-content-inner">
+              <div class="mt-content-body">
+                <div class="row">
+                  <div class="portlet light">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="con-list"></i>修改账号信息 </div>
+                        <div class="actions">
+                            <a href="<%= admins_path %>" class="btn btn-circle btn-info">
+                                <i class="glyphicon glyphicon-arrow-left"></i>
+                                <span class="hidden-xs"> 返回 </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                      <%= render 'form' %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

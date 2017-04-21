@@ -1,0 +1,47 @@
+<section>
+  <div class="content-wrapper border-none">
+    <div class="btn-group pull-right">
+      <div class="row">
+        <a href="<%= new_admin_path %>" class="mb-sm btn btn-primary">
+          <i class="fa fa-plus"></i>
+          <span class="hidden-xs"> 新增 </span>
+        </a>
+      </div>
+    </div>
+    <h3 class="paper-title border-none">账号管理
+      <small>账号列表</small>
+    </h3>
+  </div>
+  <div class="panel">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr class="table-header">
+          <th>用户名</th>
+          <th>登录次数</th>
+          <th>最后登录时间</th>
+          <th>最后登录IP</th>
+          <th>操作</th>
+        </tr>
+       </thead>
+       <tbody>
+          <% @admins.each do |admin| %>
+            <tr>
+              <td><%= admin.email %></td>
+              <td><%= admin.sign_in_count %></td>
+              <td><%= admin.last_sign_in_at.strftime('%Y-%m-%d %H:%M:%S') if admin.last_sign_in_at.present?  %></td>
+              <td><%= admin.last_sign_in_ip %></td>
+              <td>
+                <a href="<%= edit_password_admin_path(admin, return_url: request.url) %>" class="btn btn-primary mb-sm">
+                  修改密码
+                </a>
+              </td>
+            </tr>
+          <% end %>
+       </tbody>
+    </table>
+
+    <div id='paginate' class="pagination text-center">
+      <%= paginate @admins %>
+    </div>
+  </div>
+</section>

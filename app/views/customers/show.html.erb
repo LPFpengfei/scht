@@ -1,0 +1,17 @@
+<div class="content-heading">
+   <div class="pull-right">
+      <div class="btn-group">
+      <button type="button" class="btn"><%= link_to "修改密码",edit_customer_path(@customer) %></button>
+        <button type="button" class="btn"><%= link_to "返回",customers_path %></button>
+      </div>
+   </div>
+  用户详情
+</div>
+<div class="row">
+  <p class="bg-primary"><strong>用户id:</strong>&nbsp&nbsp<%= @customer.id %></p>
+  <p class="bg-success"><strong>用户昵称:</strong>&nbsp&nbsp<%= @customer.nickname %></p>
+  <p class="bg-info"><strong>用户头像：</strong>&nbsp&nbsp<img src="/assets/angle/user/02.jpg" class="img-rounded"></p>  
+  <p class="bg-warning"><strong>用户账号:</strong>&nbsp&nbsp<%= @customer.mobile %></p>
+  <p class="bg-success"><strong>用户收货地址：</strong></p>
+  <p class="bg-primary"><strong>用户订单数：</strong></p>
+</div>

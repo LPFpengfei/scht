@@ -1,0 +1,14 @@
+<div class="content-heading">
+  商品内容修改
+</div>
+<div class="row">
+  <%= form_for @customer do |f| %>
+  <p>
+    <%= f.label :修改密码： %>
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <button type="submit" class="btn btn-primary">完成修改</button>
+  </p>
+  <% end %>
+</div>

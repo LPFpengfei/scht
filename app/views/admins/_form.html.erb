@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+  <%= custom_form_for @admin, html: { class: 'form-horizontal' } do |f| %>
+  <div class="panel">
+    <div class="panel-body">
+      <div class="form-group">
+        <label class="col-md-3 control-label">Email*</label>
+        <div class="col-md-7">
+          <%= f.input :email, as: :string, required: true %>
+        </div>
+      </div>
+
+      <% if @admin.new_record? %>
+        <div class="form-group">
+          <label class="col-md-3 control-label">密码*</label>
+          <div class="col-md-7">
+            <%= f.input :password, as: :string, required: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 control-label">确认密码*</label>
+          <div class="col-md-7">
+            <%= f.input :password_confirmation, as: :string, required: true %>
+          </div>
+        </div>
+    <% end %>
+    </div>
+    <div class="panel-footer text-center">
+      <button type="submit" class="mb-sm btn btn-primary">提交</button>
+    </div>
+  </div>
+  <% end %>
+
+  </div>
+</div>
