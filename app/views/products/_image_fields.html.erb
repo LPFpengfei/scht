@@ -1,0 +1,11 @@
+<tr class="fields">
+  <td style="width:20px">
+    <%= image_form.file_field :file, class: 'change-image', onchange: 'changeImage(this)' %>
+  </td>
+  <td >
+    <%= image_tag image_form.object.file.url.blank? ? "../../default.png" : image_form.object.file.url , class: 'img' %>
+  </td>
+  <td>
+    <%= image_form.link_to_remove "移除图片" %>
+  </td>
+</tr>

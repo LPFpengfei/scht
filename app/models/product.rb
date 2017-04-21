@@ -15,5 +15,6 @@
 
 class Product < ApplicationRecord
   belongs_to :product_category
-  has_many :product_image
+  has_many :product_images
+  accepts_nested_attributes_for :product_images, :allow_destroy => true
 end
