@@ -20,26 +20,23 @@
                </li>
             </ul>
          </li>
-<!--          <li class="nav-heading">
-            <span>Components</span>
-         </li> -->
-         <li >
+         <li class="<%= 'active' if controller?('products') || controller?('product_categories') || controller?('')%>" >
             <a href="#products" title="商品管理" data-toggle="collapse">
                <em class="icon-people"></em>
                <span>商品管理</span>
             </a>
             <ul id="products" class="nav sidebar-subnav collapse">
-               <li >
+               <li class="<%= 'active' if controller?('products') %>">
                   <a href="<%= products_path %>" title="商品列表">
                      <span>商品列表</span>
                   </a>
                </li>
-               <li>
+               <li class="<%= 'active' if controller?('product_categories') %>">
                   <a href="<%= product_categories_path %>" title="商品分类">
                      <span>商品分类</span>
                   </a>
                </li>
-               <li>
+               <li class="<%= 'active' if controller?('product_images') %>">
                   <a href="<%= product_images_path %>" title="商品图片">
                      <span>商品图片</span>
                   </a>
