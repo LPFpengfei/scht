@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @products = Product.new
+    @product = Product.new
   end
 
   def edit
@@ -17,8 +17,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @products = Product.new(products_params)
-    if @products.save
+    @product = Product.new(products_params)
+    if @product.save
       redirect_to products_path
     else
       render :new
@@ -42,6 +42,6 @@ class ProductsController < ApplicationController
 
   private
     def products_params
-      params.require(:product).permit(:name, :originprice, :price, :description, :quantity, :product_category_id)
+      params.require(:product).permit(:name, :originprice, :price, :description, :quantity, :product_category_id, product_images_attributes: [:id, :file, :_destroy])
     end
 end

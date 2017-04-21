@@ -44,7 +44,8 @@ gem 'paper_trail'
 gem 'kaminari'
 gem 'carrierwave'
 # gem 'snowflake-id'
-
+gem "nested_form"
+gem 'mini_magick'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

@@ -1,0 +1,52 @@
+  <%= nested_form_for @product do |f| %>
+  <p>
+    <%= f.label :商品名称： %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :商品原价： %>
+    <%= f.text_field :originprice %>
+  </p>
+
+  <p>
+    <%= f.label :商品现价： %>
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :商品详情： %>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :库存： %>
+    <%= f.text_field :quantity %>
+  </p>
+
+  <p>
+    <%= f.label :商品分类： %>
+    <select name="product[product_category_id]">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </p>
+  <p>
+   <%= f.label :商品图片： %>
+    <div class="upload-image div-status" >
+      <p><%= f.link_to_add "新增图片", :product_images, :data => { :target => "#info" }  %></p>
+      <table id='target' class="table table-striped table-bordered table-responsive">
+        <tbody class="info" id='info'>
+        <%= f.fields_for :product_images, :wrapper => false do |image_form| %>
+          <%= render "image_fields", :image_form => image_form %>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </p>
+  <p>
+    <button type="submit" class="btn btn-primary">完成修改</button>
+  </p>
+  <% end %>
