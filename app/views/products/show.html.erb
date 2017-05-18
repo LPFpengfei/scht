@@ -9,15 +9,15 @@
 </div>
 <!-- START widgets box-->
 <div class="row">
-  <p class="bg-primary"><strong>商品名称:</strong>&nbsp&nbsp<%= @product.name %></p>
-  <p class="bg-success"><strong>商品原价:</strong>&nbsp&nbsp<%= @product.originprice %><strong>元</strong></p>
-  <p class="bg-info">商品图片：
+  <p><strong>商品名称:</strong>&nbsp&nbsp<%= @product.name %></p>
+  <p><strong>商品原价:</strong>&nbsp&nbsp<%= @product.originprice %><strong>元</strong></p>
+  <p><strong>商品现价:</strong>&nbsp&nbsp<%= @product.price %><strong>元</strong></p>
+  <p><strong>商品图片：</strong>
   <% @product.product_images.each do |image| %>
     <%=  image_tag image.file, width: '100px' %>
   <%end%>
   </p>
-  <p class="bg-warning"><strong>商品现价:</strong>&nbsp&nbsp<%= @product.price %><strong>元</strong></p>
-  <p class="bg-danger"><strong>产品详情:</strong>&nbsp&nbsp<%= @product.description %></p>
-  <p class="bg-primary"><strong>库存:</strong>&nbsp&nbsp<%= @product.quantity %></p>
-  <p class="bg-success"><strong>商品分类:</strong>&nbsp&nbsp<%= @product.try(:product_category).try(:name) %></p>
+  <p><strong>库存:</strong>&nbsp&nbsp<%= @product.quantity %></p>  
+  <p><strong>产品详情:</strong>&nbsp&nbsp<%= @product.description %></p>
+  <p><strong>商品分类:</strong>&nbsp&nbsp<%= @product.try(:product_category).try(:name) %></p>
 </div>
